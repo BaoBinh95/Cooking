@@ -17,6 +17,6 @@
         </section>
     </div>
     @include('layouts.scripts')
-    @yield('script')  
+    @yield('script')
 </body>
 </html>

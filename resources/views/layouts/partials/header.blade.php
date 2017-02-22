@@ -26,18 +26,21 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li role="presentation" class="dropdown">
                             <img src="images/default.png" alt="" id="avatar_display">
+                            {{ Html::image(Auth::user()->avatar, 'avatar', ['class' => 'img-responsive', 'id' => 'avatar_display']) }}
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                             Username <span class="caret"></span>
+                            {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">{{ trans('layout.profile') }}</a></li>
                                 <li><a href="#">{{ trans('layout.logout') }}</a></li>
+                                <li><a href="{{ route('profiles.show', ['id' => Auth::user()->id]) }}"><i class="fa fa-user" aria-hidden="true"></i> {{ trans('layout.profile') }}</a></li>
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i>{{ trans('layout.logout') }}</a></li>
                             </ul>
                         </li>
-                    </ul>
+                      </ul>
                 </nav>
             </div>
-            <!-- /.navbar-collapse -->
         </nav>
     </div>
 </div>
